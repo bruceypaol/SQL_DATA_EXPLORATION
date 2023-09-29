@@ -1,1 +1,2 @@
 # SQL_DATA_EXPLORATION
+COVID Portfolio Project in SQL
