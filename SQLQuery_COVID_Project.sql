@@ -26,7 +26,7 @@ from portfolioProject.dbo.Covid_deaths
 where continent is not null
 order by 1,2
 
--- Looking at country with Highest Infection Rate compared to Population
+-- Looking at the countries with Highest Infection Rate compared to Population
 
 select location, Max(total_cases) as HighestInfectionCount, population, MAX((total_cases / population))*100 as PercentagePopulationInfected
 from portfolioProject.dbo.Covid_deaths
@@ -34,7 +34,7 @@ where continent is not null
 group by location, population
 order by PercentagePopulationInfected DESC
 
--- Showing the country with Highest Death count per Population
+-- Showing the countries with Highest Death count per Population
 
 select location, Max(total_deaths) as TotalDeathCount
 from portfolioProject.dbo.Covid_deaths
@@ -42,7 +42,7 @@ where continent is not null
 group by location
 order by TotalDeathCount DESC
 
--- Showing the continent with Highest Death Count Per Population
+-- Showing the continents with Highest Death Count Per Population
 
 select location, Max(total_deaths) as TotalDeathCount
 from portfolioProject.dbo.Covid_deaths
@@ -50,7 +50,7 @@ where continent is not null
 group by location
 order by TotalDeathCount DESC
 
--- Global Numbers 
+-- Global Numbers: Daily Counts
 
 select date, SUM(new_cases) as NewCases, Sum(new_deaths) as NewDeaths, Sum(new_deaths)/SUM(new_cases)*100 as DeathPercentage
 from Covid_deaths
