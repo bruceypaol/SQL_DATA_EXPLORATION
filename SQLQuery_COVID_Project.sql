@@ -44,10 +44,9 @@ order by TotalDeathCount DESC
 
 -- Showing the continents with Highest Death Count Per Population
 
-select location, Max(total_deaths) as TotalDeathCount
+select continent, Max(total_deaths) as TotalDeathCount
 from portfolioProject.dbo.Covid_deaths
-where continent is not null
-group by location
+group by continent
 order by TotalDeathCount DESC
 
 -- Global Numbers: Daily Counts
